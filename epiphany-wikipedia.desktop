@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Wikipedia
-Exec=epiphany --application-mode --profile="/home/rohan/.config/epiphany/app-epiphany-wikipedia" http://en.wikipedia.org/wiki/Main_Page
-StartupNotify=true
-Terminal=false
-Type=Application
-Icon=wikipedia
-StartupWMClass=epiphany-wikipedia
