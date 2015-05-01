@@ -45,9 +45,12 @@ def remove(app_str):
         os.remove(local_path+"/epiphany-"+app['name']+"-"+app['profile']+".desktop")
 
 def load_json(app_str):
-    import json
-    with open("apps/"+app_str+".json") as app_file:
-        return json.loads(app_file.read().replace("\n",""))
+    import json, sys
+    try:
+        with open("apps/"+app_str+".json") as app_file:
+            return json.loads(app_file.read().replace("\n",""))
+    except FileNotFoundError:
+        sys.exit("Error: This web app is not available.")
 
 if __name__ == "__main__":
     import os, shutil
