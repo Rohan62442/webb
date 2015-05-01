@@ -1,9 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Name=Wikipedia
-Exec=epiphany --application-mode --profile="~/.config/epiphany/app-epiphany-wikipedia-664add438097fbd4307f814de8e62a10f8905588" http://en.wikipedia.org/wiki/Main_Page
-StartupNotify=true
-Terminal=false
-Type=Application
-Icon=wikipedia
-StartupWMClass=epiphany-wikipedia-664add438097fbd4307f814de8e62a10f8905588

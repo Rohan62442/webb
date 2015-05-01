@@ -1,0 +1,57 @@
+#!/usr/bin/python3
+
+def run():
+    import sys
+    if len(sys.argv)<=2:
+        print("Error: Incorrect number of arguments")
+    elif sys.argv[1]!="install" and sys.argv[1]!="remove":
+        print("Error: Can't recognize command "+ str(sys.argv[1]))
+    elif sys.argv[1]=="install":
+        for i in range(2,len(sys.argv)):
+            install(sys.argv[i])
+    elif sys.argv[1]=="remove":
+        for i in range(2,len(sys.argv)):
+            remove(sys.argv[i])
+    else:
+        print("Error: Incorrect arguments.")
+
+def install(app_str):
+    app=load_json(app_str)
+    app_dir=eppy_dir+"app-epiphany-"+app['name']+"-"+app['profile']
+    if not os.path.exists(app_dir):
+        os.makedirs(app_dir)
+    desk_file=app_dir+"/epiphany-"+app['name']+"-"+app['profile']+".desktop"
+    with open(desk_file, 'w') as laun:
+        laun.write("#!/usr/bin/env xdg-open\n\n[Desktop Entry]\n")
+        laun.write("Name="+app['label']+"\n")
+        laun.write("Icon="+app_dir+"/"+app['icon']+"\n")
+        laun.write("Comment="+app['comment']+"\n")
+        laun.write("Exec=epiphany --application-mode --profile=\""+app_dir+"\" "+app['url']+"\n")
+        laun.write("StartupNotify=true\nTerminal=false\nType=Application\n")
+        laun.write("StartupWMClass=epiphany-"+app['name']+"-"+app['profile']+"\n")
+    shutil.copy(desk_file, local_path)
+    shutil.copy('cookies.sqlite', app_dir)
+    shutil.copy("icons/"+app['icon'], app_dir)
+
+def remove(app_str):
+    #import json, shutil
+    app=load_json(app_str)
+    app_dir=eppy_dir+"app-epiphany-"+app['name']+"-"+app['profile']
+    desk_file=app_dir+"/epiphany-"+app['name']+"-"+app['profile']+".desktop"
+    if not os.path.exists(desk_file):
+        print("The app "+app['label']+" is not installed.")
+    else:
+        shutil.rmtree(app_dir)
+        os.remove(local_path+"/epiphany-"+app['name']+"-"+app['profile']+".desktop")
+
+def load_json(app_str):
+    import json
+    with open("apps/"+app_str+".json") as app_file:
+        return json.loads(app_file.read().replace("\n",""))
+
+if __name__ == "__main__":
+    import os, shutil
+    home_dir=os.getenv('HOME')
+    eppy_dir=home_dir+"/.config/epiphany/"
+    local_path=home_dir+"/.local/share/applications"
+    run()

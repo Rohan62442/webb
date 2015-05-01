@@ -1,9 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Name=LinkedIn
-Exec=epiphany --application-mode --profile="~/.config/epiphany/app-epiphany-linkedin-6b6390a4416131f82b6ffb509f6e779e5dd9630f" https://www.linkedin.com/
-StartupNotify=true
-Terminal=false
-Type=Application
-Icon=linkedin
-StartupWMClass=epiphany-linkedin-6b6390a4416131f82b6ffb509f6e779e5dd9630f

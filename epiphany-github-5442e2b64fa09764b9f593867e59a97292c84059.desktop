@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=GitHub
-Exec=epiphany --application-mode --profile="~/.config/epiphany/app-epiphany-github-5442e2b64fa09764b9f593867e59a97292c84059" https://github.com/
-StartupNotify=true
-Terminal=false
-Type=Application
-Icon=github
-StartupWMClass=epiphany-github-5442e2b64fa09764b9f593867e59a97292c84059
