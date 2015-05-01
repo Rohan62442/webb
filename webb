@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 def run():
-    import sys
     if len(sys.argv)<=2:
         print("Error: Incorrect number of arguments")
     elif sys.argv[1]!="install" and sys.argv[1]!="remove":
@@ -45,7 +44,7 @@ def remove(app_str):
         os.remove(local_path+"/epiphany-"+app['name']+"-"+app['profile']+".desktop")
 
 def load_json(app_str):
-    import json, sys
+    import json
     try:
         with open("apps/"+app_str+".json") as app_file:
             return json.loads(app_file.read().replace("\n",""))
@@ -53,7 +52,9 @@ def load_json(app_str):
         sys.exit("Error: This web app is not available.")
 
 if __name__ == "__main__":
-    import os, shutil
+    import os, shutil, sys
+    if os.geteuid()==0:
+        sys.exit("Error: Do not run this script as root!")
     home_dir=os.getenv('HOME')
     webb_dir=home_dir+"/.config/epiphany/"
     local_path=home_dir+"/.local/share/applications"
