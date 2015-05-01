@@ -4,9 +4,9 @@ if [[ \$USER = "root" || $(whoami) = "root" ]]; then
   echo "Error: Do not run this script as root"
   exit
 fi
-chmod +x "eppy"
-mkdir -p "$HOME/.local/share/eppy"
+chmod +x "webb"
+mkdir -p "$HOME/.local/share/webb"
 mkdir -p "$HOME/.local/bin"
-cp -rf * "$HOME/.local/share/eppy"
-ln -sf "$HOME/.local/share/eppy/eppy" "$HOME/.local/bin/eppy"
+cp -rf * "$HOME/.local/share/webb"
+ln -sf "$HOME/.local/share/webb/webb" "$HOME/.local/bin/webb"
 echo "Installation successful"

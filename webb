@@ -17,7 +17,7 @@ def run():
 
 def install(app_str):
     app=load_json(app_str)
-    app_dir=eppy_dir+"app-epiphany-"+app['name']+"-"+app['profile']
+    app_dir=webb_dir+"app-epiphany-"+app['name']+"-"+app['profile']
     if not os.path.exists(app_dir):
         os.makedirs(app_dir)
     desk_file=app_dir+"/epiphany-"+app['name']+"-"+app['profile']+".desktop"
@@ -36,7 +36,7 @@ def install(app_str):
 def remove(app_str):
     #import json, shutil
     app=load_json(app_str)
-    app_dir=eppy_dir+"app-epiphany-"+app['name']+"-"+app['profile']
+    app_dir=webb_dir+"app-epiphany-"+app['name']+"-"+app['profile']
     desk_file=app_dir+"/epiphany-"+app['name']+"-"+app['profile']+".desktop"
     if not os.path.exists(desk_file):
         print("The app "+app['label']+" is not installed.")
@@ -55,7 +55,7 @@ def load_json(app_str):
 if __name__ == "__main__":
     import os, shutil
     home_dir=os.getenv('HOME')
-    eppy_dir=home_dir+"/.config/epiphany/"
+    webb_dir=home_dir+"/.config/epiphany/"
     local_path=home_dir+"/.local/share/applications"
-    os.chdir(home_dir+"/.local/share/eppy")
+    os.chdir(home_dir+"/.local/share/webb")
     run()
