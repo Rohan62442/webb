@@ -54,4 +54,5 @@ if __name__ == "__main__":
     home_dir=os.getenv('HOME')
     eppy_dir=home_dir+"/.config/epiphany/"
     local_path=home_dir+"/.local/share/applications"
+    os.chdir(home_dir+"/.local/share/eppy")
     run()
