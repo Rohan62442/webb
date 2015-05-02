@@ -5,6 +5,7 @@ which is now simply known as Web. It makes installation and removal of these app
 fairly easy and accessible via the command-line. Just use this:
 
   `webb install webapp1 webapp2 ...
+  
   `webb remove webapp1 webapp2 ...
 
 Also, make sure you have `~/.local/bin` in your `$PATH` environment variable.
