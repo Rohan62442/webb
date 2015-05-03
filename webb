@@ -55,6 +55,30 @@ def run():
     else:
         print("Error: Incorrect arguments.")
 
+def get_all_apps():
+    all_apps=os.listdir("apps")
+    all_apps.remove("README.md")
+    for i in range(0, len(all_apps)):
+        all_apps[i]=all_apps[i].replace(".json","")
+    return all_apps
+
+def list_all():
+    apps=get_all_apps()
+    for app in apps:
+        print(app)
+
+def check_installed(app_str):
+    app=load_json(app_str)
+    if os.path.exists(webb_dir+"app-epiphany-"+app['name']+"-"+app['profile']+"/epiphany-"+app['name']+"-"+app['profile']+".desktop"):
+        return true
+    return false
+
+def list_installed():
+    apps=get_all_apps()
+    for app in apps:
+        if check_installed(app):
+            print(app)
+
 def install(app_str):
     app=load_json(app_str)
     app_dir=webb_dir+"app-epiphany-"+app['name']+"-"+app['profile']
