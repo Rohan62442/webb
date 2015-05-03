@@ -1,3 +1,9 @@
+Changelog 1.1.0 (03-05-2015)
+1. Modularized the script
+2. Options for listing available/installed apps
+3. Displaying help/usage
+4. Apps - Facebook, Twitter, Google+, Google Drive, YouTube, Gmail
+
 Changelog 1.0.0 (02-05-2015)
 1. Python script to install web apps
 2. Internal installer script

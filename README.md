@@ -1,14 +1,15 @@
 # Webb
 
 Webb is an installer for web applications based on GNOME's Epiphany web browser,
-which is now simply known as Web. It makes installation and removal of these applications
+which is now simply known as [Web] (https://wiki.gnome.org/Apps/Web). It makes installation and removal of these applications
 fairly easy and accessible via the command-line. Just use this:
 
-  ` webb install webapp1 webapp2 ...`
-  
-  ` webb remove webapp1 webapp2 ...`
+  ` webb -i webapp1 webapp2 ...`
 
-Also, make sure you have `~/.local/bin` in your `$PATH` environment variable.
+  ` webb -r webapp1 webapp2 ...`
+
+Also, make sure you have `~/.local/bin` in your `$PATH` environment variable. And NEVER run
+this script as root.
 
 ## Contributing workflow
 
@@ -34,4 +35,4 @@ You can get the latest source [here] (https://github.com/Rohan62442/Webb).
 
 ## License
 
-[GNU General Public License v3](./LICENSE)
+[GNU General Public License v3](./COPYING)
