@@ -15,10 +15,10 @@ def check_args():
             install_all()
         elif args[1]=="-r" and args[2]=="--all" and len(args)==3:
             remove_all()
-        elif args[1]="-i":
+        elif args[1]=="-i":
             for i in range(2,len(args)):
                 install(args[i])
-        elif args[1]="-r":
+        elif args[1]=="-r":
             for i in range(2,len(args)):
                 remove(args[i])
         else:
@@ -39,100 +39,15 @@ Install or remove web applications for Epiphany
    -r <apps>                Remove the specified app(s)
 
  Copyright (C) 2015 Rohan Pinto"""
-     print(help_str)
-
-def run():
-    if len(sys.argv)<=2:
-        print("Error: Incorrect number of arguments")
-    elif sys.argv[1]!="install" and sys.argv[1]!="remove":
-        print("Error: Can't recognize command "+ str(sys.argv[1]))
-    elif sys.argv[1]=="install":
-        for i in range(2,len(sys.argv)):
-            install(sys.argv[i])
-    elif sys.argv[1]=="remove":
-        for i in range(2,len(sys.argv)):
-            remove(sys.argv[i])
-    else:
-        print("Error: Incorrect arguments.")
-
-def get_all_apps():
-    all_apps=os.listdir("apps")
-    all_apps.remove("README.md")
-    for i in range(0, len(all_apps)):
-        all_apps[i]=all_apps[i].replace(".json","")
-    return all_apps
-
-def list_all():
-    apps=get_all_apps()
-    for app in apps:
-        print(app)
-
-def check_installed(app_str):
-    app=load_json(app_str)
-    if os.path.exists(webb_dir+"app-epiphany-"+app['name']+"-"+app['profile']+"/epiphany-"+app['name']+"-"+app['profile']+".desktop"):
-        return true
-    return false
-
-def list_installed():
-    apps=get_all_apps()
-    for app in apps:
-        if check_installed(app):
-            print(app)
-
-def install_all():
-    apps=get_all_apps()
-    for app in apps:
-        install(app)
-
-def remove_all():
-    apps=get_all_apps()
-    for app in apps:
-        if check_installed(app):
-            remove(app)
-
-def install(app_str):
-    app=load_json(app_str)
-    app_dir=webb_dir+"app-epiphany-"+app['name']+"-"+app['profile']
-    if not os.path.exists(app_dir):
-        os.makedirs(app_dir)
-    desk_file=app_dir+"/epiphany-"+app['name']+"-"+app['profile']+".desktop"
-    with open(desk_file, 'w') as laun:
-        laun.write("#!/usr/bin/env xdg-open\n\n[Desktop Entry]\n")
-        laun.write("Name="+app['label']+"\n")
-        laun.write("Icon="+app_dir+"/"+app['icon']+"\n")
-        laun.write("Comment="+app['comment']+"\n")
-        laun.write("Exec=epiphany --application-mode --profile=\""+app_dir+"\" "+app['url']+"\n")
-        laun.write("StartupNotify=true\nTerminal=false\nType=Application\n")
-        laun.write("StartupWMClass=epiphany-"+app['name']+"-"+app['profile']+"\n")
-    shutil.copy(desk_file, local_path)
-    shutil.copy('cookies.sqlite', app_dir)
-    shutil.copy("icons/"+app['icon'], app_dir)
-
-def remove(app_str):
-    #import json, shutil
-    app=load_json(app_str)
-    app_dir=webb_dir+"app-epiphany-"+app['name']+"-"+app['profile']
-    desk_file=app_dir+"/epiphany-"+app['name']+"-"+app['profile']+".desktop"
-    if not os.path.exists(desk_file):
-        print("The app "+app['label']+" is not installed.")
-    else:
-        shutil.rmtree(app_dir)
-        os.remove(local_path+"/epiphany-"+app['name']+"-"+app['profile']+".desktop")
-
-def load_json(app_str):
-    import json
-    try:
-        with open("apps/"+app_str+".json") as app_file:
-            return json.loads(app_file.read().replace("\n",""))
-    except FileNotFoundError:
-        sys.exit("Error: This web app is not available.")
+    print(help_str)
 
 if __name__ == "__main__":
-    import os, shutil, sys
+    import os, sys
     if os.geteuid()==0:
         sys.exit("Error: Do not run this script as root!")
-    home_dir=os.getenv('HOME')
-    webb_dir=home_dir+"/.config/epiphany/"
-    local_path=home_dir+"/.local/share/applications"
-    os.chdir(home_dir+"/.local/share/webb")
-    run()
+    os.chdir(os.getenv('HOME')+"/.local/share/webb")
+    from run.checking import *
+    from run.listing import *
+    from run.installing import *
+    from run.removing import *
+    check_args()
