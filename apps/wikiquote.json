@@ -1,8 +1,8 @@
 {
   "name": "wikiquote",
   "label": "Wikiquote",
-  "icon": "wikimedia-commons.svg",
-  "comment": "",
+  "icon": "wikiquote.png",
+  "comment": "The free quote compedium",
   "url": "http://en.wikiquote.org/wiki/Main_Page",
   "profile": "fb5376a0e90d3d1bd45b645e16543419cebb334d"
 }
