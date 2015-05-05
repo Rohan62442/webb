@@ -1,0 +1,8 @@
+{
+  "name": "yahoo-mail",
+  "label": "Yahoo! Mail",
+  "icon": "yahoo.svg",
+  "comment": "Free email from Yahoo",
+  "url": "https://mail.yahoo.com/",
+  "profile": "d59d2a11c4a1d0f05b64905ac4e165b01c7f7926"
+}
