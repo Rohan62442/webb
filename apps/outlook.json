@@ -1,0 +1,8 @@
+{
+  "name": "outlook",
+  "label": "Outlook",
+  "icon": "outlook.svg",
+  "comment": "Microsoft's free, personal mail",
+  "url": "https://outlook.com/",
+  "profile": "f4d6b594b3227f956b689581b1cea64e916ea346"
+}
