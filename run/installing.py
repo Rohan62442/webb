@@ -9,6 +9,9 @@ def install_all():
 def install(app_str):
     import shutil
     app=load_json(app_str)
+    if check_installed(app_str):
+        print(app['label']+" has already been installed.")
+        return
     app_dir=webb_dir+"app-epiphany-"+app['name']+"-"+app['profile']
     if not os.path.exists(app_dir):
         os.makedirs(app_dir)
