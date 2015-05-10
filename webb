@@ -8,6 +8,8 @@ def check_args():
         usage()
     elif len(args)==2 and args[1]=="-l":
         list_installed()
+    elif len(args)==4 and args[1]=="-c":
+        create_new(args[2], args[3])
     elif len(args)>2:
         if args[1]=="-l" and args[2]=="--all" and len(args)==3:
             list_all()
@@ -22,9 +24,9 @@ def check_args():
             for i in range(2,len(args)):
                 remove(args[i])
         else:
-            print("webb: Invalid option\nTry 'webb --help' for more information.\n")
+            print("webb: Invalid option\nTry 'webb --help' for more information.")
     else:
-        print("webb: Invalid option\nTry 'webb --help' for more information.\n")
+        print("webb: Invalid option\nTry 'webb --help' for more information.")
 
 def usage():
     help_str="""Usage: webb [OPTION]...
@@ -37,6 +39,7 @@ Install or remove web applications for Epiphany
    -i <apps>                Install the specified app(s)
    -l,                      List installed or all apps
    -r <apps>                Remove the specified app(s)
+   -c <app> <url>           Create & install a new app
 
  Copyright (C) 2015 Rohan Pinto"""
     print(help_str)
@@ -50,4 +53,5 @@ if __name__ == "__main__":
     from run.listing import *
     from run.installing import *
     from run.removing import *
+    from run.creating import *
     check_args()
