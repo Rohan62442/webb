@@ -1,3 +1,11 @@
+Changelog 1.2.0 (10-05-2015)
+1. Option to create new apps
+2. Added a default icon
+3. Use env instead of absolute path for python3
+4. Added an updater script (See http://rohan62442.github.io/Webb/)
+5. Apps - Dropbox, OneDrive, GitHub, Bitbucket, Launchpad, SourceForge
+          Reddit, Outlook, Yahoo Mail, LinkedIn
+
 Changelog 1.1.0 (03-05-2015)
 1. Modularized the script
 2. Options for listing available/installed apps

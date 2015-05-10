@@ -1,8 +1,8 @@
 # Webb
 
-Webb is an installer for web applications based on GNOME's Epiphany web browser,
-which is now simply known as [Web] (https://wiki.gnome.org/Apps/Web). It makes installation and removal of these applications
-fairly easy and accessible via the command-line. Just use this:
+Webb is a script for managing web applications based on GNOME's Epiphany web browser,
+which is now simply known as [Web] (https://wiki.gnome.org/Apps/Web). It makes creating and managing these applications
+fairly easy and accessible via the Terminal. Just use this:
 
   ` webb -i webapp1 webapp2 ...`
 
@@ -29,9 +29,7 @@ by automatically forking the project and prompting to send a pull request too.
 
 Please submit bugs and feature requests [here] (https://github.com/Rohan62442/Webb/issues).
 
-You can get the latest source [here] (https://github.com/Rohan62442/Webb).
-
-  `git clone git@github.com:Rohan62442/Webb.git`
+You can have a look at the project [wiki] (https://github.com/Rohan62442/Webb/wiki) and [site] (http://rohan62442.github.io/Webb/). You can get in touch with me on [Twitter] (https://twitter.com/Rohan62442) and [Google+] (https://plus.google.com/+RohanPinto29/posts?hl=en). If you liked `Webb`, do promote it.
 
 ## License
 
