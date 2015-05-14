@@ -11,9 +11,9 @@ def get_json(name, sha, url):
     return json.dumps({"name": name.lower(),"label": name,"icon": "default.svg","comment": "","url": url,"profile": sha})
 
 def create_new(name, url):
-    import os
-    sha=get_hash(name)
-    js=get_json(name, sha, url)
+    if name.lower() in get_all_apps():
+        print(name+" is already available.")
+        return
     with open("apps/"+name.lower()+".json", 'w') as f:
-        f.write(js)
+        f.write(get_json(name, get_hash(name), url))
     install(name.lower())

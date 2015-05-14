@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [[ \$USER = "root" || $(whoami) = "root" ]]; then
   echo "Error: Do not run this script as root"

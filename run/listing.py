@@ -2,9 +2,7 @@
 from run.checking import *
 
 def list_all():
-    apps=get_all_apps()
-    for app in apps:
-        print(app)
+    print(*get_all_apps(), sep='\n')
 
 def list_installed():
     apps=get_all_apps()
