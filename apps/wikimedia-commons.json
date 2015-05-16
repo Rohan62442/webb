@@ -1,0 +1,8 @@
+{
+  "name": "wikimedia-commons",
+  "label": "Wikimedia Commons",
+  "comment": "A freely usable media database", 
+  "icon": "wikimedia-commons.svg",
+  "url": "https://commons.wikimedia.org/",
+  "profile": "2bb20b11a82769a8fef7c549a1a86076666a3e98"
+}
