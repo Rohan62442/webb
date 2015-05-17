@@ -9,7 +9,10 @@ fairly easy and accessible via the Terminal. Just use this:
   ` webb -r webapp1 webapp2 ...`
 
 Also, make sure you have `~/.local/bin` in your `$PATH` environment variable. And NEVER run
-this script as root.
+this script as root. In order to have the latest version of Webb, run the following command
+on your Terminal:
+
+  ` curl https://rohan62442.github.io/Webb/webb-updater -o webb-updater && chmod +x webb-updater && ./webb-updater`
 
 ## Contributing workflow
 

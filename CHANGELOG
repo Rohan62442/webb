@@ -1,3 +1,9 @@
+Changelog 1.2.1 (17-05-2015)
+1. Fixed ambiguity while creating apps.
+2. Other code improvements.
+3. Apps - Coursera, Udacity, StackExchange, StackOverflow, Wikimedia Commons
+          Amazon
+
 Changelog 1.2.0 (10-05-2015)
 1. Option to create new apps
 2. Added a default icon

@@ -1,4 +1,14 @@
 #!/usr/bin/env python3
+#
+# Webb helps you manage web applications on GNOME's Epiphany browser.
+# You can install, remove or create brand new applications all from
+# the comfort of your Terminal.
+#
+# Copyright (C) 2015 Rohan Pinto
+#
+# License: GNU GPLv3 <http://www.gnu.org/licenses/gpl-3.0.html>
+# Author: Rohan Pinto <rohan62442@hotmail.com>
+# Code: GitHub <https://github.com/Rohan62442/Webb>
 
 def check_args():
     args=sys.argv
