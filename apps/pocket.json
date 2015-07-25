@@ -1,8 +1,8 @@
 {
   "profile": "0bd05d64fd9f3f98fe8697db01db08a171da7e8e",
   "name": "pocket",
-  "url": "https://getpocket.com/", 
-  "icon": "pocket.ico",
+  "url": "https://getpocket.com/",
+  "icon": "pocket.svg",
   "label": "Pocket",
   "comment": "Read it Later"
 }
