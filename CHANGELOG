@@ -1,3 +1,8 @@
+Changelog 1.3.0 (26-07-2015)
+1. Use Numix icons for Facebook, Twitter, Launchpad & GitHub.
+2. Install to root system instead of users' $HOME.
+3. Apps - Flipkart, Pocket, DeviantArt, Instagram, Flikr
+
 Changelog 1.2.1 (17-05-2015)
 1. Fixed ambiguity while creating apps.
 2. Other code improvements.
