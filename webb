@@ -58,7 +58,7 @@ if __name__ == "__main__":
     import os, sys
     if os.geteuid()==0:
         sys.exit("Error: Do not run this script as root!")
-    os.chdir(os.getenv('HOME')+"/.local/share/webb")
+    os.chdir('/usr/share/webb')
     from run.checking import *
     from run.listing import *
     from run.installing import *
