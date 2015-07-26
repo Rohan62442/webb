@@ -8,10 +8,10 @@ fairly easy and accessible via the Terminal. Just use this:
 
   ` webb -r webapp1 webapp2 ...`
 
-NEVER run this script as `root`. In order to have the latest version of Webb, run the following command
-on your Terminal:
+NEVER run this script as `root`. Webb is now available on [Copr] (https://copr.fedoraproject.org/coprs/rohan62442/webb/).
+To install, fire up your Terminal and run the following command:
 
-  ` curl https://rohan62442.github.io/Webb/webb-updater -o webb-updater && chmod +x webb-updater && ./webb-updater`
+  ` dnf copr enable rohan62442/webb && dnf -y install webb`
 
 ## Contributing workflow
 
@@ -31,7 +31,7 @@ by automatically forking the project and prompting to send a pull request too.
 
 Please submit bugs and feature requests [here] (https://github.com/Rohan62442/Webb/issues).
 
-You can have a look at the project [wiki] (https://github.com/Rohan62442/Webb/wiki) and [site] (http://rohan62442.github.io/Webb/). You can get in touch with me on [Twitter] (https://twitter.com/Rohan62442) and [Google+] (https://plus.google.com/+RohanPinto29/posts?hl=en). If you liked `Webb`, do promote it.
+You can have a look at the project [wiki] (https://github.com/Rohan62442/webb/wiki) and [site] (http://rohan62442.github.io/webb/). You can get in touch with me on [Twitter] (https://twitter.com/Rohan62442) and [Google+] (https://plus.google.com/+RohanPinto29/posts?hl=en). If you liked `Webb`, do promote it.
 
 ## License
 
